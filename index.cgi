@@ -24,3 +24,5 @@ htmlFormat = """
   </footer>
 </body>
 </html> """
+
+print(htmlFormat)
