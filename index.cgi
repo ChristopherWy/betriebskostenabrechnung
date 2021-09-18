@@ -23,7 +23,14 @@ htmlFormat = """
     </ul>
   </nav>
 
-
+     <h3>Bitte Name und Alter eingeben:</h3>
+     <form method="post" action="example1.cgi">
+     <table border=0>
+     <tr><td>Name:</td><td><input type="text" name="name"/></td></tr>
+     <tr><td>Alter:</td><td><input type="text" name="age"/></td></tr>
+    </table>
+    <input type="submit" name="submit" value="OK"/>
+    </form>
 
   <footer>
      <p>2021 @ Christopher Wyczisk & Amit Jerochim GbR </p>
