@@ -7,7 +7,7 @@ htmlFormat = """
    <head>
         <title>Betriebskostenabrechnung einfach gemacht</title>
         <link rel="icon" type="image/png" href="/images/logo-1.png">
-        <link rel="stylesheet" href="css/styles.css">
+        <link rel="stylesheet" href="css/style.css">
   </head>
 <body>
   <h1>Betriebskostenabrechnung erstellen</h1>
