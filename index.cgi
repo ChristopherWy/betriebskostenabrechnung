@@ -7,7 +7,7 @@ timeStr = time.strftime("%c") # obtains current time
 
 htmlFormat = """
 <html>
-  <Title>The Time Now</Title>
+  <Title><link rel="icon" type="image/png" href="images/logo-1.png">Betriebskostenabrechnung einfach gemacht</Title>
 <body>
   <p>The current Central date and time is:  {timeStr}</p>
 </body>
