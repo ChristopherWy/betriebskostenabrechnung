@@ -1,6 +1,35 @@
 #!/usr/bin/env python3
+import cgi
+import cgitb; cgitb.enable()
 
 print("Content-Type: text/html\n\n")
+
+form = cgi.FieldStorage()
+
+
+if form.has_key('submit') and form.has_key('name') and
+   form.has_key('age'):
+    print 'Content-Type: text/htmlnn'
+    print '''
+<html><head><title>Eingegebene Werte</title></head>
+<body>
+ Sie heissen %(name)s und sind %(age)s Jahre alt.
+</body></html>''' % {'name' : form['name'].value,
+                     'age' : form['age'].value}
+else:
+    print 'Content-Type: text/htmlnn'
+    print '''
+<html><head><title>Test-Maske</title></head>
+<body>
+ <h3>Bitte Name und Alter eingeben:</h3>
+ <form method="post" action="example1.cgi">
+ <table border=0>
+ <tr><td>Name:</td><td><input type="text" name="name"/></td></tr>
+ <tr><td>Alter:</td><td><input type="text" name="age"/></td></tr>
+</table>
+<input type="submit" name="submit" value="OK"/>
+</form>
+</body></html>'''
 
 htmlFormat = """
 <html>
@@ -18,6 +47,8 @@ htmlFormat = """
       <li><a href="https://betriebskostenabrechnung-einfach-gemacht.com/kontakt">Kontakt</a></li>
     </ul>
   </nav>
+    
+
 
   <footer>
      <p>2021 @ Christopher Wyczisk & Amit Jerochim GbR </p>
@@ -25,4 +56,4 @@ htmlFormat = """
 </body>
 </html> """
 
-print(htmlFormat)
+#print(htmlFormat)
