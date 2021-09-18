@@ -8,7 +8,7 @@ print("Content-Type: text/html\n\n")
 
 form = cgi.FieldStorage()
 
-if form['name'].value != "":
+try:
     htmlFormat = """
         <html><head><title>Eingegebene Werte</title></head>
         <body>
@@ -16,7 +16,7 @@ if form['name'].value != "":
         </body></html>""" % {'name' : form['name'].value,
                              'age' : form['age'].value}
     print(htmlFormat)
-else:
+except:
     htmlFormat = """
     <html>
        <head>
