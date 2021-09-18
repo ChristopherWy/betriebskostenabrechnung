@@ -1,12 +1,14 @@
 #!/usr/bin/env python3
 import cgi
 import cgitb; cgitb.enable()
+import os
+import sys
 
 print("Content-Type: text/html\n\n")
 
 form = cgi.FieldStorage()
 
-if form.has_key('submit') and form.has_key('name') and form.has_key('age'):
+if form['name'].value != "":
     htmlFormat = """
         <html><head><title>Eingegebene Werte</title></head>
         <body>
