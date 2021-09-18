@@ -8,13 +8,13 @@ form = cgi.FieldStorage()
 
 if form.has_key('submit') and form.has_key('name') and
    form.has_key('age'):
-    print 'Content-Type: text/htmlnn'
-    print '''
-<html><head><title>Eingegebene Werte</title></head>
-<body>
- Sie heissen %(name)s und sind %(age)s Jahre alt.
-</body></html>''' % {'name' : form['name'].value,
-                     'age' : form['age'].value}
+    htmlFormat = """
+        <html><head><title>Eingegebene Werte</title></head>
+        <body>
+         Sie heissen %(name)s und sind %(age)s Jahre alt.
+        </body></html>""" % {'name' : form['name'].value,
+                             'age' : form['age'].value}
+    print(htmlFormat)
 
 htmlFormat = """
 <html>
@@ -48,4 +48,4 @@ htmlFormat = """
 </body>
 </html> """
 
-print(htmlFormat)
+#print(htmlFormat)
